@@ -48,8 +48,9 @@ class AppMetadata(BaseModel):
     status: AppStatus
     sandbox_user_tunnel_url: str
     title: str = ""
-    is_featured: bool = False 
-    
+    is_featured: bool = False
+    user_id: str = None  # Optional user tracking for production multi-user scenarios
+
     def model_dump(self, **kwargs):
         """Override model_dump to handle AppStatus enum serialization"""
         data = super().model_dump(**kwargs)
@@ -59,6 +60,8 @@ class AppMetadata(BaseModel):
         data['sandbox_user_tunnel_url'] = self.sandbox_user_tunnel_url
         data['title'] = self.title
         data['is_featured'] = self.is_featured
+        if self.user_id:
+            data['user_id'] = self.user_id
         return data
 
 class AppData(BaseModel):
