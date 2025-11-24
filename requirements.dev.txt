@@ -1,0 +1,6 @@
+modal
+fastapi[standard]
+jinja2
+python-multipart 
+pydantic
+anthropic
