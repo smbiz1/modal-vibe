@@ -1,0 +1,22 @@
+name = "vibe-ui"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[env.production]
+routes = [
+  { pattern = "vibe.yourdomain.com/*", zone_name = "yourdomain.com" }
+]
+
+# Environment variables
+[vars]
+MODAL_API_URL = "https://your-modal-app.modal.run"
+API_KEY = "your-api-key"
+
+# R2 bucket for static assets
+[[r2_buckets]]
+binding = "STATIC_BUCKET"
+bucket_name = "vibe-static-assets"
+
+# Development configuration
+[env.development]
+vars = { MODAL_API_URL = "http://localhost:3000" }
