@@ -1,10 +1,36 @@
+# Python
 **/__pycache__/
 **/*.egg-info/
-**/.log/
-**/.venv*
-**/venv
 **/.python-version
 **/.mypy_cache/
 **/.ruff_cache/
+
+# Virtual environments
+**/.venv*
+**/venv
+
+# Environment variables
 **/.env
+.env.local
+.env.production
+.env.demo
+
+# Logs
+**/.log/
+*.log
+
+# Node
 **/node_modules
+**/dist
+**/.next
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
